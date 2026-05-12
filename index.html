@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>LUNES 11 DE MAYO DEL 2026</title>
+  <style>
+    :root{
+      --bg1:#06020b;
+      --bg2:#0b0413;
+      --card:#0f0718cc;
+      --border:#4c1d95;
+      --purple:#a855f7;
+      --purple2:#7c3aed;
+      --text:#f5f3ff;
+      --muted:#c4b5fd;
+      --shadow: 0 0 25px rgba(168,85,247,.25);
+      --shadow2: 0 0 60px rgba(124,58,237,.22);
+      --neon: 0 0 8px rgba(168,85,247,.9),
+              0 0 18px rgba(168,85,247,.7),
+              0 0 35px rgba(124,58,237,.6);
+    }
+
+    *{box-sizing:border-box; margin:0; padding:0;}
+
+    body{
+      min-height:100vh;
+      font-family: "Georgia", serif;
+      background:
+        radial-gradient(circle at 15% 20%, rgba(168,85,247,.14), transparent 55%),
+        radial-gradient(circle at 85% 70%, rgba(124,58,237,.18), transparent 60%),
+        linear-gradient(180deg, var(--bg1), var(--bg2));
+      color: var(--text);
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      padding:30px 14px;
+      overflow-x:hidden;
+    }
+
+    .wrapper{
+      width: min(820px, 100%);
+      position:relative;
+    }
+
+    /* Decorative aura */
+    .wrapper::before{
+      content:"";
+      position:absolute;
+      inset:-30px;
+      background:
+        radial-gradient(circle at 30% 20%, rgba(168,85,247,.12), transparent 60%),
+        radial-gradient(circle at 70% 85%, rgba(124,58,237,.12), transparent 65%);
+      filter: blur(20px);
+      z-index:-2;
+    }
+
+    .letter{
+      background: linear-gradient(180deg, rgba(18,7,26,.88), rgba(8,2,12,.85));
+      border: 1px solid rgba(168,85,247,.35);
+      border-radius: 26px;
+      padding: 34px 26px;
+      box-shadow: var(--shadow), var(--shadow2);
+      position:relative;
+      overflow:hidden;
+    }
+
+    /* Subtle gothic texture lines */
+    .letter::before{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:
+        repeating-linear-gradient(
+          135deg,
+          rgba(255,255,255,.02) 0px,
+          rgba(255,255,255,.02) 1px,
+          transparent 1px,
+          transparent 14px
+        );
+      opacity:.5;
+      pointer-events:none;
+    }
+
+    /* top ornament */
+    .ornament{
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      gap:12px;
+      margin-bottom:18px;
+      position:relative;
+      z-index:2;
+    }
+
+    .ornament .line{
+      height:1px;
+      width:32%;
+      background: linear-gradient(90deg, transparent, rgba(168,85,247,.7), transparent);
+    }
+
+    .ornament .sigil{
+      width:14px;
+      height:14px;
+      border-radius:50%;
+      border:1px solid rgba(168,85,247,.7);
+      box-shadow: var(--neon);
+      position:relative;
+    }
+
+    .ornament .sigil::after{
+      content:"";
+      position:absolute;
+      inset:3px;
+      border-radius:50%;
+      border:1px solid rgba(196,181,253,.6);
+    }
+
+    .date{
+      text-align:center;
+      font-size:.95rem;
+      letter-spacing:.5px;
+      color: var(--muted);
+      margin-bottom:22px;
+      font-style:italic;
+      position:relative;
+      z-index:2;
+    }
+
+    h1{
+      text-align:center;
+      font-size:1.65rem;
+      font-weight:700;
+      letter-spacing:.6px;
+      margin-bottom:22px;
+      color: #fdf4ff;
+      text-shadow: 0 0 18px rgba(168,85,247,.18);
+      position:relative;
+      z-index:2;
+    }
+
+    .content{
+      font-size:1.08rem;
+      line-height:1.85;
+      color: rgba(245,243,255,.92);
+      position:relative;
+      z-index:2;
+    }
+
+    .content p{
+      margin-bottom:16px;
+    }
+
+    .content strong{
+      color:#f5d0fe;
+      font-weight:800;
+      text-shadow: 0 0 14px rgba(168,85,247,.22);
+    }
+
+    .divider{
+      margin: 22px auto 20px;
+      width:78%;
+      height:1px;
+      background: linear-gradient(90deg, transparent, rgba(168,85,247,.55), transparent);
+      position:relative;
+      z-index:2;
+    }
+
+    .signature{
+      margin-top:22px;
+      padding-top:18px;
+      border-top: 1px solid rgba(168,85,247,.18);
+      position:relative;
+      z-index:2;
+    }
+
+    .signature .from{
+      font-size:1.05rem;
+      color: rgba(245,243,255,.95);
+      margin-bottom:10px;
+      font-style:italic;
+    }
+
+    .signature .name{
+      font-size:1.15rem;
+      font-weight:800;
+      letter-spacing:.7px;
+      color:#fdf4ff;
+      text-shadow: 0 0 16px rgba(168,85,247,.22);
+    }
+
+    .signature .heartline{
+      margin-top:10px;
+      color: var(--muted);
+      font-size:1rem;
+    }
+
+    .neon-phrase{
+      margin-top:26px;
+      padding:18px 18px;
+      border-radius:18px;
+      border:1px solid rgba(168,85,247,.55);
+      background: rgba(20, 8, 28, .6);
+      box-shadow: 0 0 22px rgba(168,85,247,.18);
+      position:relative;
+      z-index:2;
+    }
+
+    .neon-phrase p{
+      font-family: "Trebuchet MS", sans-serif;
+      font-size:1.02rem;
+      line-height:1.7;
+      color:#f5f3ff;
+      text-align:center;
+      text-shadow: var(--neon);
+      letter-spacing:.4px;
+    }
+
+    .neon-phrase span{
+      color:#d8b4fe;
+      font-weight:800;
+      text-shadow: var(--neon);
+    }
+
+    /* bottom ornament */
+    .footer-ornament{
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      gap:10px;
+      margin-top:22px;
+      opacity:.9;
+      position:relative;
+      z-index:2;
+    }
+
+    .footer-ornament .dot{
+      width:6px;
+      height:6px;
+      border-radius:50%;
+      background: rgba(168,85,247,.75);
+      box-shadow: var(--neon);
+    }
+
+    .footer-ornament .thin{
+      width:36%;
+      height:1px;
+      background: linear-gradient(90deg, transparent, rgba(196,181,253,.55), transparent);
+    }
+
+    @media (max-width:520px){
+      .letter{padding:28px 18px;}
+      h1{font-size:1.4rem;}
+      .content{font-size:1.02rem;}
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrapper">
+    <div class="letter">
+
+      <div class="ornament">
+        <div class="line"></div>
+        <div class="sigil"></div>
+        <div class="line"></div>
+      </div>
+
+      <div class="date">Lunes, 11 de mayo de 2026 — Noche</div>
+
+      <h1>Una Carta Hecha de Deseo y Sombra</h1>
+
+      <div class="content">
+        <p><strong>Mi amor,</strong></p>
+
+        <p>
+          Esta noche no quiero escribirte bonito… quiero escribirte real.
+          Quiero confesarte lo que me pasa contigo cuando el mundo se apaga y solo quedas tú en mi mente,
+          metida en mis pensamientos como una tentación que no me deja respirar.
+        </p>
+
+        <p>
+          Porque tú no eres un amor suave… tú eres un amor peligroso.
+          De esos que te atrapan lento, que te envician, que te hacen sentir cosas que uno no debería sentir tan fuerte…
+          pero que igual desea, con el alma ardiendo y el cuerpo pidiendo más.
+        </p>
+
+        <p>
+          Hoy me haces falta de una forma oscura… intensa… como si mi piel te recordara sin permiso.
+          Como si mi corazón no supiera extrañarte de manera tranquila, porque contigo todo es exagerado, profundo, inevitable.
+        </p>
+
+        <p>
+          Y no te voy a mentir… esta noche no solo te extraño como novia.
+          Te extraño como mi pecado favorito. Como esa mujer que me vuelve loco, que me provoca pensamientos que me encienden,
+          que me hace imaginarte cerca, demasiado cerca… con esa mirada tuya que parece inocente,
+          pero que a mí me destruye por dentro.
+        </p>
+
+        <p>
+          Quiero que sepas que me tienes en tus manos… que me tienes completamente.
+          Que me vuelves débil y dominante al mismo tiempo.
+          Que me haces querer cuidarte como lo más sagrado… pero también desearte como lo más prohibido.
+        </p>
+
+        <div class="divider"></div>
+
+        <p>
+          Esta noche te escribiría mil cosas lindas, pero la verdad es una sola:
+        </p>
+
+        <p style="text-align:center; font-size:1.25rem;">
+          <strong>te deseo.</strong>
+        </p>
+
+        <p>
+          Te deseo con una intensidad que no se explica, con ganas que se vuelven locura,
+          con amor que se vuelve fuego… y con una necesidad tan profunda de ti,
+          que si estuvieras aquí, no sé si podría comportarme como un hombre tranquilo.
+        </p>
+
+        <p>
+          Porque tú me haces perder la calma… y aun así, eres lo único que me da paz.
+        </p>
+
+        <p>
+          Dime… ¿cómo se supone que yo duerma, si mi mente solo sabe imaginarte?
+        </p>
+
+        <p>
+          Te amo, pero te amo de esa manera peligrosa…<br/>
+          de esa que no se apaga…<br/>
+          de esa que se siente en la piel…<br/>
+          de esa que deja marcas en el alma.
+        </p>
+
+        <p>
+          Buenas noches, mi amor…
+        </p>
+
+        <p>
+          Ojalá sueñes conmigo.<br/>
+          Porque yo esta noche… no voy a poder dejar de soñarte a ti.
+        </p>
+
+        <div class="signature">
+          <div class="from"><strong>Tu amor ❤️</strong></div>
+          <div class="name">JUAN KALETH MENDOZA PRIMERA 💜</div>
+        </div>
+
+        <div class="neon-phrase">
+          <p>
+            Y cuando la noche se ponga más silenciosa, cuando el mundo se quede sin luz y el deseo empiece a hablar,
+            quiero que recuerdes esto: <span>mi amor por ti no es tranquilo, es una promesa oscura</span>,
+            una obsesión dulce que no sabe rendirse, un fuego que no pide permiso…
+            y si algún día te sientes perdida, solo piensa en mí, porque yo siempre voy a encontrarte,
+            siempre voy a desearte, siempre voy a ser tu sombra más fiel…
+            hasta el último latido, <span>VALERIA PETRO VILLAZÓN</span>.
+          </p>
+        </div>
+
+        <div class="footer-ornament">
+          <div class="thin"></div>
+          <div class="dot"></div>
+          <div class="dot"></div>
+          <div class="dot"></div>
+          <div class="thin"></div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</body>
+  </html>
